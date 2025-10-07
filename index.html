@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Basis Data - UBP Karawang</title>
+</head>
+<body>
+  <header>
+    <h1>Blog Basis Data</h1>
+    <p>UBP Karawang</p>
+  </header>
+
+  <!-- Konten Postingan -->
+  <main id="content"></main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Kunjungi Website Kampus:</p>
+    <a class="btn-logo" href="https://www.ubpkarawang.ac.id" target="_blank">
+      <img src="assets/logo-ubp.png" alt="UBP Karawang" />
+    </a>
+    <p>&copy; 2025 Blog Basis Data - UBP Karawang</p>
+  </footer>
+
+  <script>
+    // ===== Styling via JavaScript =====
+    document.body.style.fontFamily = "Arial, sans-serif";
+    document.body.style.background = "#f4f4f4";
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+
+    // Header
+    const header = document.querySelector("header");
+    header.style.background = "#004aad";
+    header.style.color = "white";
+    header.style.textAlign = "center";
+    header.style.padding = "20px";
+
+    // Footer
+    const footer = document.querySelector("footer");
+    footer.style.textAlign = "center";
+    footer.style.padding = "20px";
+    footer.style.background = "#004aad";
+    footer.style.color = "white";
+
+    // Logo Bulat
+    const logo = document.querySelector(".btn-logo img");
+    logo.style.width = "60px";
+    logo.style.height = "60px";
+    logo.style.borderRadius = "50%";
+    logo.style.border = "2px solid white";
+    logo.style.objectFit = "cover";
+    logo.style.transition = "transform 0.3s";
+    logo.addEventListener("mouseover", () => {
+      logo.style.transform = "scale(1.1)";
+    });
+    logo.addEventListener("mouseout", () => {
+      logo.style.transform = "scale(1)";
+    });
+
+    // ===== Hanya 1 Post (Post 2) =====
+    const post = {
+      title: "Post 2: Apa itu Attribute, Entitas, dan Relasi dalam ERD",
+      content:
+        "<strong>Entitas</strong> adalah objek atau hal yang dapat diidentifikasi secara unik dalam sistem basis data, " +
+        "misalnya <em>Mahasiswa</em>, <em>Dosen</em>, atau <em>Mata Kuliah</em>.<br><br>" +
+        "<strong>Attribute</strong> adalah karakteristik atau properti dari sebuah entitas. " +
+        "Misalnya, entitas <em>Mahasiswa</em> memiliki atribut seperti <em>NIM</em>, <em>Nama</em>, dan <em>Alamat</em>.<br><br>" +
+        "<strong>Relasi</strong> adalah hubungan antara dua atau lebih entitas. " +
+        "Contohnya, entitas <em>Mahasiswa</em> memiliki relasi dengan <em>Mata Kuliah</em> melalui proses <em>mengambil</em> atau <em>mendaftar</em>.<br><br>" +
+        "Dalam diagram ERD (Entity Relationship Diagram), entitas digambarkan sebagai persegi panjang, atribut sebagai elips, dan relasi sebagai belah ketupat."
+    };
+
+    // Menampilkan Postingan
+    const content = document.getElementById("content");
+    const section = document.createElement("section");
+
+    section.style.background = "white";
+    section.style.margin = "20px auto";
+    section.style.padding = "20px";
+    section.style.maxWidth = "800px";
+    section.style.borderRadius = "10px";
+    section.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+
+    const h2 = document.createElement("h2");
+    h2.textContent = post.title;
+    h2.style.color = "#004aad";
+
+    const p = document.createElement("p");
+    p.innerHTML = post.content;
+
+    section.appendChild(h2);
+    section.appendChild(p);
+    content.appendChild(section);
+  </script>
+</body>
+</html>
